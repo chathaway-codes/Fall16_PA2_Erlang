@@ -1,7 +1,9 @@
 -module(main).
 -compile(export_all).
 
-%Use the following function to get a random node (or the current node if no named nodes exist).
+% In order to make your program both distributed and concurrent you should use spawn/4, http://erlang.org/doc/man/erlang.html#spawn-4
+
+% Use the following function to get a random node (or the current node if no named nodes exist).
 get_random_node() ->
   World = net_adm:world(),
   case length(World) of
